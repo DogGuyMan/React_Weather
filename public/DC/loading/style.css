@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.loadingBackgroundOpacity .night, .background_component .night, #root .loading .background .night {
+  opacity: 80%; }
+
+.loadingBackgroundOpacity .hazy, .background_component .hazy, #root .loading .background .hazy {
+  opacity: 100%; }
+
+.loadingBackgroundOpacity .day, .background_component .day, #root .loading .background .day {
+  opacity: 100%; }
+
+.alignCenter, .content_component, #root .loading .content {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.WHinherit, #root .loading .content, .background_component div, #root .loading .background div {
+  width: inherit;
+  height: inherit; }
+
+#root {
+  width: 100%;
+  height: 100vh; }
+  #root .loading {
+    width: 100%;
+    height: 100%; }
+    #root .loading .background {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    #root .loading .content {
+      flex-direction: column; }
+      #root .loading .content svg {
+        transform: scale(50%);
+        stroke-width: 10;
+        stroke: #00a1ff;
+        stroke-linecap: round;
+        transform: translate(5px, 5px);
+        stroke-dasharray: 440;
+        stroke-dashoffset: 440;
+        animation-name: animate, rotate;
+        animation-duration: 4s, 8s;
+        animation-timing-function: linear, linear;
+        animation-iteration-count: infinite, infinite; }
+
+@keyframes animate {
+  0%, 100% {
+    stroke-dashoffset: 440; }
+  50% {
+    stroke-dashoffset: 0; }
+  50.1% {
+    stroke-dashoffset: 880; } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+      #root .loading .content p {
+        color: #FFF;
+        margin: 36px; }
+
+.background_component div, #root .loading .background div {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.background_component .night, #root .loading .background .night {
+  z-index: -1000;
+  background-color: #000000;
+  background-blend-mode: darken; }
+
+.background_component .hazy, #root .loading .background .hazy {
+  z-index: -1001;
+  background-color: #A4A4A4; }
+
+.background_component .day, #root .loading .background .day {
+  z-index: -1002;
+  background-color: #4ABCFC; }

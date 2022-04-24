@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.alignCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.WHinherit {
+    width: inherit;
+    height: inherit;
+}
+
+$mpx : 36px;
+$day-color: #4ABCFC;
+$night-color: #000000;
+$hazy-color: #A4A4A4;
+
+
+
+/////////////////////////////////////////////////
+#root {
+    width: 100%;
+    height: 100vh;
+
+    .loading {
+        width: 100%;
+        height: 100%;
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            @extend .background_component;
+        }
+
+        .content {
+            @extend .WHinherit;
+            @extend .content_component;
+            flex-direction: column;
+
+            svg {
+                transform: scale(50%);
+                stroke-width: 10;
+                stroke: #00a1ff;
+                stroke-linecap: round;
+                transform: translate(5px, 5px);
+                stroke-dasharray: 440;
+                stroke-dashoffset: 440;
+
+                animation-name: animate, rotate;
+                animation-duration: 4s, 8s;
+                animation-timing-function: linear, linear;
+                animation-iteration-count: infinite, infinite;
+                
+                @keyframes animate{
+                    0%,100%{stroke-dashoffset: 440;}
+                    50%{stroke-dashoffset: 0;}
+                    50.1%{stroke-dashoffset: 880;}
+                }
+                @keyframes rotate {
+                    0%{transform: rotate(0deg);}
+                    100%{transform: rotate(360deg);}
+                }
+            }
+
+            p {
+                color: #FFF;
+                margin : $mpx;
+            }
+        }
+    }
+}
+
+.content_component {
+    @extend .alignCenter;
+}
+
+.background_component {
+    @extend .loadingBackgroundOpacity;
+
+    div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        @extend .WHinherit;
+    }
+
+    .night {
+        z-index: -1000;
+        background-color: $night-color;
+        background-blend-mode: darken;
+    }
+
+    .hazy {
+        z-index: -1001;
+        background-color: $hazy-color;
+    }
+
+    .day {
+        z-index: -1002;
+        background-color: $day-color;
+    }
+}

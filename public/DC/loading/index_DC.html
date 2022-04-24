@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Weather Project</title>
-  </head>
-  <body>
-    <div id="root">
-      <div class="loading">
-        <svg width="411" height="411" viewBox="0 0 411 411" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="205.5" cy="205.5" r="197.5" stroke="#6B6B6B" stroke-width="16"/>
+  <title>Weather Project</title>
+</head>
+
+<body>
+  <div id="root">
+    <section class="loading">
+      <!----------------------------------------------------------->
+      <div class="background ">
+        <div class="night"></div>
+        <div class="hazy"></div>
+        <div class="day"></div>
+      </div>
+      <!----------------------------------------------------------->
+      <div class="content">
+        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="75" cy="75" r="72" stroke="#6B6B6B" stroke-width="6"/>
           </svg>          
-      </div>     
-    </div>
-  </body>
+        <p>Loading</p>
+      </div>
+      <!----------------------------------------------------------->
+    </section>
+  </div>
+</body>
+
 </html>

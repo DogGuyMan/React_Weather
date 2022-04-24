@@ -1,5 +1,16 @@
 .alignCenter {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
+
+.WHinherit {
+    width: inherit;
+    height: inherit;
+}
+
+$mpx : 36px;
+$day-color: #4ABCFC;
+$night-color: #000000;
+$hazy-color: #A4A4A4;
+

@@ -1,0 +1,57 @@
+@import "variables";
+
+.ClearEllipseOpacity{
+    .blue{opacity: 0%;}
+    .gray{opacity: 40%;}
+}
+.ThunderstormEllipseOpacity{
+    .blue{opacity: 10%;}
+    .gray{opacity: 40%;}
+}
+.RainEllipseOpacity{
+    .blue{opacity: 10%;}
+    .gray{opacity: 40%;}
+}
+.CloudsEllipseOpacity{
+    .blue{opacity: 0%;}
+    .gray{opacity: 40%;}
+}
+.SnowEllipseOpacity{
+    .blue{opacity: 20%;}
+    .gray{opacity: 40%;}
+}
+
+.Ellipse{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    height: 100%; width: 100%;
+    inset: 0;
+    @extend .Ellipse_component;
+    &.ClearE{@extend .ClearEllipseOpacity;}
+    &.ThunderstormE{@extend .ThunderstormEllipseOpacity;}
+    &.RainE{@extend .RainEllipseOpacity;}
+    &.CloudsE{@extend .CloudsEllipseOpacity;}
+    &.SnowE{@extend .SnowEllipseOpacity;}
+}
+
+.Ellipse_component{
+    div{
+        position: absolute;
+        @extend .WHinherit;
+    }
+    .blue{
+        z-index: -998;
+        background-size: 2000px;
+        background-repeat: no-repeat;
+        background-position: 50% 200px;
+        background-image: url("data:image/svg+xml,%3Csvg width='400' height='148' viewBox='0 0 400 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='200' cy='74' rx='200' ry='74' fill='%230092B2'/%3E%3C/svg%3E%0A");
+    }
+    .gray{
+        z-index: -999;
+        background-size: 2000px;
+        background-repeat: no-repeat;
+        background-position: 50% 200px;
+        background-image: url("data:image/svg+xml,%3Csvg width='400' height='148' viewBox='0 0 400 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='200' cy='74' rx='200' ry='74' fill='%23C4C4C4'/%3E%3C/svg%3E%0A");
+    }
+}
