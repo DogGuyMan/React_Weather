@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden; }
+
+.alignCenter, .content_component, #root .Cloud .content {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.WHinherit, .Ellipse_component div, #root .Cloud .Ellipse div, .background_component div, #root .Cloud .background div {
+  width: inherit;
+  height: inherit; }
+
+#root {
+  width: 100%;
+  height: 100vh; }
+  #root .Cloud {
+    width: 100%;
+    height: 100%; }
+    #root .Cloud .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0; }
+    #root .Cloud .Ellipse {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      inset: 0; }
+    #root .Cloud .time {
+      position: absolute;
+      left: 4%;
+      top: 5.5%;
+      font-size: 2rem;
+      color: #FFF; }
+    #root .Cloud .content {
+      color: #FFF;
+      flex-direction: column; }
+      #root .Cloud .content img {
+        transform: scale(75%) translateY(-20%); }
+      #root .Cloud .content .textContent {
+        text-align: center;
+        transform: translateY(-400px); }
+        #root .Cloud .content .textContent .title {
+          font-size: 4rem; }
+        #root .Cloud .content .textContent .temp {
+          font-size: 4rem; }
+        #root .Cloud .content .textContent .location {
+          font-size: 1rem; }
+
+.subtitle {
+  position: fixed;
+  bottom: 10%; }
+
+.Ellipse_component div, #root .Cloud .Ellipse div {
+  position: absolute; }
+
+.Ellipse_component .blue, #root .Cloud .Ellipse .blue {
+  z-index: -998;
+  background-size: 2000px;
+  background-repeat: no-repeat;
+  background-position: 50% 200px;
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='148' viewBox='0 0 400 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='200' cy='74' rx='200' ry='74' fill='%230092B2'/%3E%3C/svg%3E%0A"); }
+
+.Ellipse_component .gray, #root .Cloud .Ellipse .gray {
+  z-index: -999;
+  background-size: 2000px;
+  background-repeat: no-repeat;
+  background-position: 50% 200px;
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='148' viewBox='0 0 400 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='200' cy='74' rx='200' ry='74' fill='%23C4C4C4'/%3E%3C/svg%3E%0A"); }
+
+.content_component img, #root .Cloud .content img {
+  animation-duration: 3s;
+  animation-name: fadein; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 100; } }
+
+.background_component div, #root .Cloud .background div {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.background_component .night, #root .Cloud .background .night {
+  z-index: -1000;
+  background-color: #000000;
+  background-blend-mode: darken; }
+
+.background_component .hazy, #root .Cloud .background .hazy {
+  z-index: -1001;
+  background-color: #A4A4A4; }
+
+.background_component .day, #root .Cloud .background .day {
+  z-index: -1002;
+  background-color: #4ABCFC; }
