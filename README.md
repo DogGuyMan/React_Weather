@@ -1,46 +1,122 @@
-# Getting Started with Create React App
+https://cs.kangwon.ac.kr/~ysmoon/courses/2009_2/se/project/7.design-report.pdf
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather Project 요구 분석서
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 목차
+[1. 개요]()
+[2. 기능적목표]()
+[3. 요구,제약사항]()
+[4. 인수조건]()
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. 개요
+날씨와 관련된 다양한 정보를 볼 수 있는 웹사이트 제작
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2. 기능적 목표
 
-### `npm test`
+```
+---엔트리---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+if(위치정보()){
+//있음
+서비스 실행(위치정보)
+}
+else{
+//
+서비스 없음
+}
+```
 
-### `npm run build`
+위치정보 Geolocation 사용
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+---서비스---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+서비스_실행(_위치) {
+JSON = API(_위치);
+기상상태 비 눈 극한
+온도
+습도
+바람
+강우량
+도시이름
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+}
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+openweather 사용
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. 조건
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+지역 날씨에 따라 뒷 이미지와 표시가 달라진다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+확장이 간편하게 만들기
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Weather Project 시스템 설계
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## 목차
+[1. 개요]()
+[2. 시스템 구조]()
+[3. 모듈설계]()
+[4. UI 설계]()
+
+---
+
+## 1. 개요
+
+1. 주요 기능
+1. 현재 위치 반환
+2. 날씨 정보 반환
+
+## 2. 시스템 구조
+```
+위치 가져오기
+위치에 대한 날씨 가져오기
+```
+
+## 3. 모듈 설계
+
+---
+
+|모듈1|설명|
+|:--|:--|
+|모듈이름|엔트리|
+|기능|시스템 실행 유무를 가지고 |
+|오류||
+|멤버자료||
+|메서드||
+|인풋||
+
+---
+
+|모듈1|설명|
+|:--|:--|
+|모듈이름|API 처리|
+|기능|API처리를 통해 UI 그려주는 역할|
+|오류||
+|멤버자료|JSON / 컴포넌트|
+|메서드||
+|인풋|지오 로케이션|
+
+---
+
+|모듈1|설명|
+|:--|:--|
+|모듈이름|컴포넌트 처리|
+|기능|JSON을 입력받아 컴포넌트 생성|
+|오류||
+|멤버자료||
+|메서드||
+|인풋|JSON|
+
+---
+### 수정
+app 을 수정하자
