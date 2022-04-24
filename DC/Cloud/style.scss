@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow :hidden;
+}
+
+.alignCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.WHinherit {
+    width: inherit;
+    height: inherit;
+}
+
+$mpx : 36px;
+$day-color: #4ABCFC;
+$night-color: #000000;
+$hazy-color: #A4A4A4;
+
+
+
+/////////////////////////////////////////////////
+#root {
+    width: 100%;
+    height: 100vh;
+
+    .Cloud {
+        width: 100%;
+        height: 100%;
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            @extend .background_component;
+        }
+        .Ellipse{
+            position: absolute;
+            height: 100%; width: 100%;
+            inset: 0;
+            @extend .Ellipse_component;
+        }
+        .time{
+            position: absolute;
+            left: 4%; top:5.5%;
+            font-size: 2rem;
+            color: #FFF;
+        }
+        .content{
+            color: #FFF;
+            flex-direction: column;
+            img{transform: scale(75%) translateY(-20%)};
+            .textContent{
+                text-align: center;
+                transform: translateY(-400px);
+                .title{font-size: 4rem;}
+                .temp{font-size: 4rem;}
+                .location{font-size: 1rem;}
+            }
+            @extend .content_component;
+        }
+    }
+}
+
+.subtitle{
+    position: fixed;
+    bottom: 10%;
+}
+
+.Ellipse_component{
+    div{
+        position: absolute;
+        @extend .WHinherit;
+    }
+    .blue{
+        z-index: -998;
+        background-size: 2000px;
+        background-repeat: no-repeat;
+        background-position: 50% 200px;
+        background-image: url("data:image/svg+xml,%3Csvg width='400' height='148' viewBox='0 0 400 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='200' cy='74' rx='200' ry='74' fill='%230092B2'/%3E%3C/svg%3E%0A");
+    }
+    .gray{
+        z-index: -999;
+        background-size: 2000px;
+        background-repeat: no-repeat;
+        background-position: 50% 200px;
+        background-image: url("data:image/svg+xml,%3Csvg width='400' height='148' viewBox='0 0 400 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='200' cy='74' rx='200' ry='74' fill='%23C4C4C4'/%3E%3C/svg%3E%0A");
+    }
+}
+
+.content_component {
+    @extend .alignCenter;
+    img{
+        animation-duration: 3s;
+        animation-name: fadein;
+        @keyframes fadein {
+            from {opacity: 0;}
+            to {opacity: 100;}
+        }
+    }
+}
+
+.background_component {
+    div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        @extend .WHinherit;
+    }
+
+    .night {
+        z-index: -1000;
+        background-color: $night-color;
+        background-blend-mode: darken;
+    }
+
+    .hazy {
+        z-index: -1001;
+        background-color: $hazy-color;
+    }
+
+    .day {
+        z-index: -1002;
+        background-color: $day-color;
+    }
+}
+
