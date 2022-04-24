@@ -57,19 +57,19 @@ const weatherCases : Options = {
 }
 
 function Weather({temperature, name, curLocation} : {temperature : number, name : string, curLocation : string}) {
-    //style={{display : "none"}
+    const _name = name; //이걸로 디버깅 해보자
     return (
         <section className="Weather">
-            <Background name={name}/>
-            <Ellipse name={name}/>
+            <Background name={_name}/>
+            <Ellipse name={_name}/>
             <Clock className="time" format={"HH:mm:ss"} ticking={true} timezone={"Asia/Seoul"} />
             <div className="content">
-                <img src={weatherCases[name]?.img}></img>
+                <img src={weatherCases[_name]?.img}></img>
                 <div className="textContent">
-                    <p className="title">{weatherCases[name]?.title}</p>
+                    <p className="title">{weatherCases[_name]?.title}</p>
                     <p className="temp">{temperature}˚</p>
                     <p className="location">{curLocation}</p>
-                    <p className="subtitle">{weatherCases[name]?.subtitle}</p>
+                    <p className="subtitle">{weatherCases[_name]?.subtitle}</p>
                 </div>
             </div>
         </section>
